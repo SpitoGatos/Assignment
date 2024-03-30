@@ -1,0 +1,48 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.2.4'
+	id 'io.spring.dependency-management' version '1.1.4'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = '17'
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'io.jsonwebtoken:jjwt-api:0.11.2'
+	runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.2'
+	runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.2'
+
+	// Hibernate Core
+	implementation 'org.hibernate:hibernate-core:5.6.4.Final'
+	// Hibernate Entity Manager
+	implementation 'org.hibernate:hibernate-entitymanager:5.6.4.Final'
+	// Hibernate Validator (Hibernate's implementation of Bean Validation)
+	implementation 'org.hibernate.validator:hibernate-validator' // This brings in the javax.validation.Validator
+	//implementation 'org.hibernate.validator:hibernate-validator:6.2.0.Final'
+	implementation 'javax.el:javax.el-api:3.0.0' // required for Hibernate Validator
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation('org.hibernate.validator:hibernate-validator') {
+		exclude group: 'javax.xml.bind', module: 'jaxb-api'
+	}
+
+	// MySQL JDBC driver
+	runtimeOnly 'mysql:mysql-connector-java:8.0.28' // replace with your desired version
+
+	// (Optional) Logging dependency (e.g., Log4j or SLF4J)
+	implementation 'org.slf4j:slf4j-api:1.7.32'
+	runtimeOnly 'org.slf4j:slf4j-simple:1.7.32' // Replace with your desired logging implementation
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
