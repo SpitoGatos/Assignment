@@ -11,7 +11,9 @@ Build automation : gradle
 IDE : intellij IDEA
 
 In the controller folder we have our controller that contains the services to be hit from the front end or who ever.
+
 In the model folder we have our entities user,real estate
+
 In the service folder we have our services 
 
 
