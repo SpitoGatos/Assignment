@@ -1,11 +1,15 @@
 Project Spitogatos Assignment
+
 Java : Version 17
+
 Framework : Spring Boot 
+
 ORM : Hibernate
+
 Build automation : gradle
+
 IDE : intellij IDEA
 
-Thing I didn’t do : Front end , Junit Test 
 
 Questions 1,2 
 I didn’t use a database for simplicity and speed of development. 
